@@ -47,7 +47,7 @@ export default function ProfilePage() {
   return (
     <div className="min-h-screen bg-[var(--bg-base)]">
       <Sidebar />
-      <div className="lg:ml-[260px]">
+      <div className="lg:ml-[70px]">
         <TopBar />
 
         <main className="pt-[65px]">

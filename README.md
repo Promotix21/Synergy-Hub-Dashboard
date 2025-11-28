@@ -131,18 +131,18 @@ synergy-hub-dashboard/
 ### Colors
 
 **Light Theme:**
-- Background: `#FAF8F3` (Warm Ivory)
-- Primary: `#E8AA96` (Soft Terracotta)
-- Secondary: `#C4B5D8` (Dusty Lavender)
-- Accent 1: `#B8E3D1` (Mint Cream)
-- Accent 2: `#A8C5DA` (Powder Blue)
+- Background: `#F8F9FA` (Cool Gray)
+- Primary: `#6366F1` → `#8B5CF6` (Indigo to Purple)
+- Secondary: `#3B82F6` → `#06B6D4` (Blue to Cyan)
+- Accent 1: `#EC4899` → `#F43F5E` (Pink to Rose)
+- Accent 2: `#F97316` → `#FBBF24` (Orange to Amber)
 
 **Dark Theme:**
-- Background: `#2A2726` (Deep Charcoal)
-- Primary: `#F0B8A6` (Brighter Terracotta)
-- Secondary: `#D4C5E8` (Brighter Lavender)
-- Accent 1: `#C8F3E1` (Brighter Mint)
-- Accent 2: `#B8D5EA` (Brighter Blue)
+- Background: `#0F172A` (Slate)
+- Primary: `#818CF8` → `#A78BFA` (Light Indigo to Purple)
+- Secondary: `#60A5FA` → `#22D3EE` (Light Blue to Cyan)
+- Accent 1: `#F472B6` → `#FB7185` (Light Pink to Rose)
+- Accent 2: `#FB923C` → `#FCD34D` (Light Orange to Amber)
 
 ### Typography
 

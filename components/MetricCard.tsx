@@ -14,10 +14,10 @@ interface MetricCardProps {
 }
 
 const gradientClasses = {
-  primary: 'from-[#E8AA96] to-[#C4B5D8]',
-  secondary: 'from-[#C4B5D8] to-[#A8C5DA]',
-  accent1: 'from-[#B8E3D1] to-[#A8C5DA]',
-  accent2: 'from-[#A8C5DA] to-[#E8AA96]',
+  primary: 'from-indigo-500 to-purple-600',
+  secondary: 'from-blue-500 to-cyan-500',
+  accent1: 'from-pink-500 to-rose-500',
+  accent2: 'from-orange-500 to-amber-500',
 }
 
 export default function MetricCard({ title, value, trend, icon: Icon, gradient, delay = 0 }: MetricCardProps) {

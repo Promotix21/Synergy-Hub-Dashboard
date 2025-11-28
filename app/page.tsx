@@ -23,7 +23,7 @@ export default function Dashboard() {
       <Sidebar />
 
       {/* Main Content */}
-      <div className="lg:ml-[260px] transition-all duration-300">
+      <div className="lg:ml-[70px] transition-all duration-300">
         {/* Top Bar */}
         <TopBar onMenuClick={() => setSidebarCollapsed(!sidebarCollapsed)} />
 
