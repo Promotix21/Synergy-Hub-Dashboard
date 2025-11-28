@@ -20,7 +20,11 @@ export default function Dashboard() {
   const { isSubmenuOpen } = useSidebar()
 
   return (
-    <div className="min-h-screen bg-[var(--bg-base)]">
+    <div className="min-h-screen bg-[var(--bg-base)] relative overflow-hidden">
+      {/* Decorative Gradient Orbs */}
+      <div className="gradient-orb gradient-orb-1" />
+      <div className="gradient-orb gradient-orb-2" />
+
       {/* Sidebar */}
       <Sidebar />
 
@@ -30,7 +34,7 @@ export default function Dashboard() {
         <TopBar onMenuClick={() => setSidebarCollapsed(!sidebarCollapsed)} />
 
         {/* Page Content */}
-        <main className="pt-[65px] px-4 md:px-8 pb-8">
+        <main className="pt-[65px] px-4 md:px-8 pb-8 relative z-10">
           <div className="max-w-[1600px] mx-auto">
             {/* Welcome Section */}
             <motion.div

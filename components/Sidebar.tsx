@@ -123,12 +123,12 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Icon Sidebar - Always Visible */}
+      {/* Icon Sidebar - Hidden on Mobile, Visible on Desktop */}
       <motion.aside
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
-        className="fixed left-0 top-0 h-full w-[70px] bg-[var(--bg-card)] border-r border-[var(--border-color)] z-50 flex flex-col"
+        className="hidden lg:flex fixed left-0 top-0 h-full w-[70px] bg-[var(--bg-card)] border-r border-[var(--border-color)] z-50 flex-col"
       >
         {/* Logo */}
         <div className="h-[65px] flex items-center justify-center border-b border-[var(--border-color)]">
