@@ -19,6 +19,7 @@ import {
 } from 'lucide-react'
 import Sidebar from '@/components/Sidebar'
 import TopBar from '@/components/TopBar'
+import { useSidebar } from '@/lib/SidebarContext'
 
 interface Contact {
   id: number
@@ -61,6 +62,7 @@ export default function ChatPage() {
   const [selectedContact, setSelectedContact] = useState(contacts[0])
   const [message, setMessage] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
+  const { isSubmenuOpen } = useSidebar()
 
   const filteredContacts = contacts.filter(c =>
     c.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -76,7 +78,7 @@ export default function ChatPage() {
   return (
     <div className="min-h-screen bg-[var(--bg-base)]">
       <Sidebar />
-      <div className="lg:ml-[70px]">
+      <div className={`transition-all duration-300 ${isSubmenuOpen ? 'lg:ml-[330px]' : 'lg:ml-[70px]'}`}>
         <TopBar />
 
         <main className="pt-[65px] h-screen">

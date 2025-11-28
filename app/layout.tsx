@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { ThemeProvider } from '@/lib/ThemeProvider'
+import { SidebarProvider } from '@/lib/SidebarContext'
 
 export const metadata: Metadata = {
   title: 'Synergy Hub - CRM Dashboard',
@@ -25,8 +26,10 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
-          <div className="gradient-mesh" />
-          {children}
+          <SidebarProvider>
+            <div className="gradient-mesh" />
+            {children}
+          </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>

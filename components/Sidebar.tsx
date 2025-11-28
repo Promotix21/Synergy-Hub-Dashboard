@@ -13,8 +13,9 @@ import {
   MessagesSquare,
   X
 } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useSidebar } from '@/lib/SidebarContext'
 
 interface MenuItem {
   icon: any
@@ -104,6 +105,12 @@ const menuItems: MenuItem[] = [
 export default function Sidebar() {
   const [expandedItem, setExpandedItem] = useState<string | null>(null)
   const [activeItem, setActiveItem] = useState('Dashboard')
+  const { setIsSubmenuOpen } = useSidebar()
+
+  // Update context when submenu opens/closes
+  useEffect(() => {
+    setIsSubmenuOpen(expandedItem !== null)
+  }, [expandedItem, setIsSubmenuOpen])
 
   const handleItemClick = (item: MenuItem) => {
     if (item.submenu) {

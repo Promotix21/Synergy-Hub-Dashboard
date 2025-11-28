@@ -19,6 +19,7 @@ import {
 } from 'lucide-react'
 import Sidebar from '@/components/Sidebar'
 import TopBar from '@/components/TopBar'
+import { useSidebar } from '@/lib/SidebarContext'
 
 const tabs = ['Timeline', 'About', 'Campaigns', 'Team', 'Activity']
 
@@ -43,11 +44,12 @@ const achievements = [
 
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState('Timeline')
+  const { isSubmenuOpen } = useSidebar()
 
   return (
     <div className="min-h-screen bg-[var(--bg-base)]">
       <Sidebar />
-      <div className="lg:ml-[70px]">
+      <div className={`transition-all duration-300 ${isSubmenuOpen ? 'lg:ml-[330px]' : 'lg:ml-[70px]'}`}>
         <TopBar />
 
         <main className="pt-[65px]">
