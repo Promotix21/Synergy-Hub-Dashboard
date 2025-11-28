@@ -22,6 +22,7 @@ import {
 import Sidebar from '@/components/Sidebar'
 import TopBar from '@/components/TopBar'
 import Link from 'next/link'
+import { useSidebar } from '@/lib/SidebarContext'
 
 interface Client {
   id: number
@@ -60,6 +61,7 @@ const statusConfig = {
 export default function ClientsPage() {
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedStatus, setSelectedStatus] = useState<string>('all')
+  const { isSubmenuOpen } = useSidebar()
 
   const filteredClients = clients.filter(client => {
     const matchesSearch = client.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -76,7 +78,7 @@ export default function ClientsPage() {
   return (
     <div className="min-h-screen bg-[var(--bg-base)]">
       <Sidebar />
-      <div className="lg:ml-[260px]">
+      <div className={`transition-all duration-300 ${isSubmenuOpen ? 'lg:ml-[330px]' : 'lg:ml-[70px]'}`}>
         <TopBar />
 
         <main className="pt-[65px] p-6">

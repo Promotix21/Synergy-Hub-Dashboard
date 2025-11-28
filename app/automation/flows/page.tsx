@@ -19,6 +19,7 @@ import {
 } from 'lucide-react'
 import Sidebar from '@/components/Sidebar'
 import TopBar from '@/components/TopBar'
+import { useSidebar } from '@/lib/SidebarContext'
 
 interface FlowNode {
   id: string
@@ -51,6 +52,7 @@ export default function FlowDesigner() {
   const [nodes, setNodes] = useState(initialNodes)
   const [selectedNode, setSelectedNode] = useState<FlowNode | null>(null)
   const [flowName, setFlowName] = useState('Welcome Flow')
+  const { isSubmenuOpen } = useSidebar()
 
   const handleAddNode = (type: string) => {
     const newNode: FlowNode = {
@@ -69,7 +71,7 @@ export default function FlowDesigner() {
   return (
     <div className="min-h-screen bg-[var(--bg-base)]">
       <Sidebar />
-      <div className="lg:ml-[260px]">
+      <div className={`transition-all duration-300 ${isSubmenuOpen ? 'lg:ml-[330px]' : 'lg:ml-[70px]'}`}>
         <TopBar />
 
         <main className="pt-[65px] p-6">

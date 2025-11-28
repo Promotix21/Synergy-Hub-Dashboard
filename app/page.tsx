@@ -13,9 +13,11 @@ import ClientList from '@/components/ClientList'
 import ScheduledCalendar from '@/components/ScheduledCalendar'
 import FloatingActions from '@/components/FloatingActions'
 import Footer from '@/components/Footer'
+import { useSidebar } from '@/lib/SidebarContext'
 
 export default function Dashboard() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
+  const { isSubmenuOpen } = useSidebar()
 
   return (
     <div className="min-h-screen bg-[var(--bg-base)]">
@@ -23,7 +25,7 @@ export default function Dashboard() {
       <Sidebar />
 
       {/* Main Content */}
-      <div className="lg:ml-[260px] transition-all duration-300">
+      <div className={`transition-all duration-300 ${isSubmenuOpen ? 'lg:ml-[330px]' : 'lg:ml-[70px]'}`}>
         {/* Top Bar */}
         <TopBar onMenuClick={() => setSidebarCollapsed(!sidebarCollapsed)} />
 
