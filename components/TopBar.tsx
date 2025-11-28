@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import {
-  Search,
   Bell,
   Sun,
   Moon,
@@ -11,11 +10,11 @@ import {
   Settings,
   CreditCard,
   LogOut,
-  Menu,
-  X
+  Menu
 } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { useTheme } from '@/lib/ThemeProvider'
+import SearchModal from './SearchModal'
 
 interface Notification {
   id: number
@@ -36,7 +35,6 @@ export default function TopBar({ onMenuClick }: { onMenuClick?: () => void }) {
   const { theme, toggleTheme } = useTheme()
   const [showNotifications, setShowNotifications] = useState(false)
   const [showProfile, setShowProfile] = useState(false)
-  const [searchFocused, setSearchFocused] = useState(false)
   const [unreadCount, setUnreadCount] = useState(2)
 
   // Close dropdowns when clicking outside
@@ -77,25 +75,10 @@ export default function TopBar({ onMenuClick }: { onMenuClick?: () => void }) {
           </div>
         </div>
 
-        {/* Center: Search */}
-        <motion.div
-          animate={{ width: searchFocused ? '100%' : 'auto' }}
-          className="flex-1 max-w-xl"
-        >
-          <div className="relative">
-            <Search
-              size={18}
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--text-tertiary)]"
-            />
-            <input
-              type="text"
-              placeholder="Search anything... (Ctrl + K)"
-              onFocus={() => setSearchFocused(true)}
-              onBlur={() => setSearchFocused(false)}
-              className="w-full pl-12 pr-4 py-2.5 rounded-xl bg-[var(--bg-base)] border border-[var(--border-color)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all duration-200"
-            />
-          </div>
-        </motion.div>
+        {/* Center: Search Modal */}
+        <div className="flex-1 max-w-xl">
+          <SearchModal />
+        </div>
 
         {/* Right: Actions */}
         <div className="flex items-center gap-3">
