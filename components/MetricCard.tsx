@@ -28,11 +28,12 @@ export default function MetricCard({ title, value, trend, icon: Icon, gradient, 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay }}
-      whileHover={{ y: -4, boxShadow: 'var(--shadow-card-hover)' }}
-      className="card-neumorphic rounded-2xl p-6 relative overflow-hidden transition-all duration-300"
+      whileHover={{ y: -6, scale: 1.02 }}
+      className="card-gradient-subtle card-gradient-hover rounded-2xl p-6 relative overflow-hidden"
     >
-      {/* Background gradient */}
-      <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${gradientClasses[gradient]} opacity-10 rounded-full blur-2xl`} />
+      {/* Background gradient orbs */}
+      <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${gradientClasses[gradient]} opacity-15 rounded-full blur-3xl`} />
+      <div className={`absolute -bottom-4 -left-4 w-24 h-24 bg-gradient-to-br ${gradientClasses[gradient]} opacity-10 rounded-full blur-2xl`} />
 
       <div className="relative z-10">
         {/* Icon */}

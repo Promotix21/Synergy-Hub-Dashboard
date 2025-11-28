@@ -172,4 +172,103 @@ body {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
+
+  /* Vibrant gradient card backgrounds */
+  .card-gradient-subtle {
+    background: linear-gradient(135deg,
+      rgba(99, 102, 241, 0.03) 0%,
+      rgba(139, 92, 246, 0.05) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+  }
+
+  .dark .card-gradient-subtle {
+    background: linear-gradient(135deg,
+      rgba(129, 140, 248, 0.05) 0%,
+      rgba(167, 139, 250, 0.08) 100%);
+    border: 1px solid rgba(129, 140, 248, 0.15);
+  }
+
+  .card-gradient-hover {
+    transition: all 0.3s ease;
+  }
+
+  .card-gradient-hover:hover {
+    background: linear-gradient(135deg,
+      rgba(99, 102, 241, 0.08) 0%,
+      rgba(139, 92, 246, 0.12) 100%);
+    border-color: rgba(99, 102, 241, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .dark .card-gradient-hover:hover {
+    background: linear-gradient(135deg,
+      rgba(129, 140, 248, 0.1) 0%,
+      rgba(167, 139, 250, 0.15) 100%);
+    border-color: rgba(129, 140, 248, 0.3);
+  }
+
+  /* Decorative gradient orbs */
+  .gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.15;
+    animation: float 20s ease-in-out infinite;
+  }
+
+  .gradient-orb-1 {
+    background: var(--color-primary);
+    top: -10%;
+    right: -5%;
+    width: 300px;
+    height: 300px;
+  }
+
+  .gradient-orb-2 {
+    background: var(--color-accent1);
+    bottom: -15%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    animation-delay: -10s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(20px, -20px) scale(1.1); }
+    50% { transform: translate(-20px, 20px) scale(0.9); }
+    75% { transform: translate(10px, -10px) scale(1.05); }
+  }
+
+  /* Enhanced glass cards with gradient borders */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .glass-card {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Gradient shimmer effect */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
 }
